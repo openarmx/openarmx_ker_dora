@@ -7,12 +7,12 @@ import time
 import pyarrow as pa
 from dora import Node
 
-from openflex_ker_dora.config import load_config
-from openflex_ker_dora.messages import parse_ker_frame
-from openflex_ker_dora.teleop_controller import TeleopController
+from openarmx_ker_dora.config import load_config
+from openarmx_ker_dora.messages import parse_ker_frame
+from openarmx_ker_dora.teleop_controller import TeleopController
 
 
-LOG = logging.getLogger("openflex_ker_dora.teleop_controller")
+LOG = logging.getLogger("openarmx_ker_dora.teleop_controller")
 
 
 def main() -> None:

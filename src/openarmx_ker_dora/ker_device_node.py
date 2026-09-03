@@ -6,17 +6,17 @@ import logging
 import pyarrow as pa
 from dora import Node
 
-from openflex_ker_dora.config import load_config
-from openflex_ker_dora.device import HardwareReceiver
-from openflex_ker_dora.messages import make_ker_frame
-from openflex_ker_dora.pose_processor import (
+from openarmx_ker_dora.config import load_config
+from openarmx_ker_dora.device import HardwareReceiver
+from openarmx_ker_dora.messages import make_ker_frame
+from openarmx_ker_dora.pose_processor import (
     LEFT_TARGET_NAMES,
     RIGHT_TARGET_NAMES,
     KerPoseProcessor,
 )
 
 
-LOG = logging.getLogger("openflex_ker_dora.ker_device")
+LOG = logging.getLogger("openarmx_ker_dora.ker_device")
 
 
 def main() -> None:

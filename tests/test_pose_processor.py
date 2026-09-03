@@ -1,7 +1,7 @@
 import math
 import unittest
 
-from openflex_ker_dora.pose_processor import LowPassFilter, KerPoseProcessor, map_range
+from openarmx_ker_dora.pose_processor import LowPassFilter, KerPoseProcessor, map_range
 
 
 class PoseProcessorTest(unittest.TestCase):

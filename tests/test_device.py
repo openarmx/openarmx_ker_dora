@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from openflex_ker_dora.device import parse_device_packet
+from openarmx_ker_dora.device import parse_device_packet
 
 
 def test_device_packet_encodes_error_bits_with_same_sample():

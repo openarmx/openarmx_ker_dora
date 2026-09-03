@@ -5,15 +5,15 @@ import logging
 import pyarrow as pa
 from dora import Node, Ros2Context, Ros2NodeOptions, Ros2QosPolicies
 
-from openflex_ker_dora.config import load_config
-from openflex_ker_dora.messages import (
+from openarmx_ker_dora.config import load_config
+from openarmx_ker_dora.messages import (
     arrow_struct_to_dict,
     finite_vector,
     float64_multi_array,
 )
 
 
-LOG = logging.getLogger("openflex_ker_dora.ros2_interface")
+LOG = logging.getLogger("openarmx_ker_dora.ros2_interface")
 
 
 def reorder_joint_state(message: dict, expected: tuple[str, ...]):
@@ -34,7 +34,7 @@ def main() -> None:
     node = Node()
     context = Ros2Context()
     ros_node = context.new_node(
-        "openflex_ker_dora_bridge", "/", Ros2NodeOptions(rosout=True)
+        "openarmx_ker_dora_bridge", "/", Ros2NodeOptions(rosout=True)
     )
     qos = Ros2QosPolicies(reliable=True, keep_last=10)
     left_topic = ros_node.create_topic(

@@ -6,8 +6,8 @@ OpenArmX KER 双臂外骨骼主手的 Dora 遥操作系统。基于 Dora-rs 高�
 
 ## 目录内容
 
-- `src/openflex_ker_dora/` - 外骨骼硬件通信、姿态滤波处理、遥操作安全控制器及 ROS 2 桥接节点。
-- `config/` - 外骨骼通信参数配置 (`openflex_ker.yaml`) 与机械臂 URDF 关节物理限位表 (`openarmx_robot.yaml`)。
+- `src/openarmx_ker_dora/` - 外骨骼硬件通信、姿态滤波处理、遥操作安全控制器及 ROS 2 桥接节点。
+- `config/` - 外骨骼通信参数配置 (`openarmx_ker.yaml`) 与机械臂 URDF 关节物理限位表 (`openarmx_robot.yaml`)。
 - `tests/` - 通信协议、滤波算法、关节限位与控制状态机单元测试。
 - `dataflow.yml` - Dora-rs 数据流拓扑描述文件。
 
@@ -23,8 +23,8 @@ OpenArmX KER 双臂外骨骼主手的 Dora 遥操作系统。基于 Dora-rs 高�
 ## 获取仓库
 
 ```bash
-git clone https://github.com/openarmx/openflex_ker_dora.git
-cd openflex_ker_dora
+git clone https://github.com/openarmx/openarmx_ker_dora.git
+cd openarmx_ker_dora
 uv sync
 source .venv/bin/activate
 ```
@@ -33,7 +33,7 @@ source .venv/bin/activate
 
 配置文件位于 `config/` 目录：
 
-- `config/openflex_ker.yaml`：外骨骼硬件通信方式（默认 `wifi`，可选 `usb`）、外骨骼局域网地址（默认 `openarm-ker.local:19090`）、低通滤波系数、角速度限制与超时熔断阈值。
+- `config/openarmx_ker.yaml`：外骨骼硬件通信方式（默认 `wifi`，可选 `usb`）、外骨骼局域网地址（默认 `openarm-ker.local:19090`）、低通滤波系数、角速度限制与超时熔断阈值。
 - `config/openarmx_robot.yaml`：定义左右臂各 8 个关节名称以及来自 URDF 的软限位区间（`lower` / `upper`），用于实时截断并防止机械臂超限。
 
 ## 启动与运行

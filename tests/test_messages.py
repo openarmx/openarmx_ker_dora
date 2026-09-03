@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from openflex_ker_dora.messages import make_ker_frame, parse_ker_frame
-from openflex_ker_dora.pose_processor import LEFT_TARGET_NAMES, RIGHT_TARGET_NAMES
+from openarmx_ker_dora.messages import make_ker_frame, parse_ker_frame
+from openarmx_ker_dora.pose_processor import LEFT_TARGET_NAMES, RIGHT_TARGET_NAMES
 
 
 def test_ker_frame_keeps_targets_and_error_mask_atomic():

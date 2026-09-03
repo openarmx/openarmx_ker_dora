@@ -1,9 +1,9 @@
 import numpy as np
 
-from openflex_ker_dora.config import load_config
-from openflex_ker_dora.messages import KerFrame
-from openflex_ker_dora.pose_processor import LEFT_TARGET_NAMES, RIGHT_TARGET_NAMES
-from openflex_ker_dora.teleop_controller import TeleopController
+from openarmx_ker_dora.config import load_config
+from openarmx_ker_dora.messages import KerFrame
+from openarmx_ker_dora.pose_processor import LEFT_TARGET_NAMES, RIGHT_TARGET_NAMES
+from openarmx_ker_dora.teleop_controller import TeleopController
 
 
 def make_frame(config, *, sequence=1, error_mask=0, offset=0.5, now=10.0):

@@ -86,11 +86,11 @@ def load_config(
     config_path: Path | None = None, robot_path: Path | None = None
 ) -> AppConfig:
     if config_path is None:
-        configured_path = os.environ.get("OPENFLEX_KER_CONFIG")
+        configured_path = os.environ.get("OPENARMX_KER_CONFIG") or os.environ.get("OPENFLEX_KER_CONFIG")
         config_path = (
             Path(configured_path)
             if configured_path
-            else PROJECT_ROOT / "config" / "openflex_ker.yaml"
+            else PROJECT_ROOT / "config" / "openarmx_ker.yaml"
         )
     robot_path = robot_path or PROJECT_ROOT / "config" / "openarmx_robot.yaml"
     raw = yaml.safe_load(config_path.read_text(encoding="utf-8"))

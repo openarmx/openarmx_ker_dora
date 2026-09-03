@@ -1,6 +1,6 @@
 import numpy as np
 
-from openflex_ker_dora.ros2_interface_node import reorder_joint_state
+from openarmx_ker_dora.ros2_interface_node import reorder_joint_state
 
 
 def test_ros_joint_state_is_reordered_by_name():

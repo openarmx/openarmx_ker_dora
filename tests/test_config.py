@@ -3,10 +3,10 @@ from pathlib import Path
 import pytest
 import yaml
 
-from openflex_ker_dora.config import load_config
+from openarmx_ker_dora.config import load_config
 
 
-CONFIG = Path(__file__).parents[1] / "config" / "openflex_ker.yaml"
+CONFIG = Path(__file__).parents[1] / "config" / "openarmx_ker.yaml"
 ROBOT = Path(__file__).parents[1] / "config" / "openarmx_robot.yaml"
 
 
@@ -50,7 +50,7 @@ def test_environment_selects_explicit_real_configuration(tmp_path, monkeypatch):
     raw["device"]["wifi_host"] = "192.168.10.50"
     candidate = tmp_path / "real.yaml"
     candidate.write_text(yaml.safe_dump(raw))
-    monkeypatch.setenv("OPENFLEX_KER_CONFIG", str(candidate))
+    monkeypatch.setenv("OPENARMX_KER_CONFIG", str(candidate))
 
     config = load_config(robot_path=ROBOT)
     assert config.mode == "real"

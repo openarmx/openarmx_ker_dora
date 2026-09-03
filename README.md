@@ -6,8 +6,8 @@ Dora teleoperation system for the OpenArmX KER bimanual leader exoskeleton. Buil
 
 ## Contents
 
-- `src/openflex_ker_dora/` - Exoskeleton hardware transport, pose processing/filtering, safety controller, and ROS 2 bridge nodes.
-- `config/` - Exoskeleton device configuration (`openflex_ker.yaml`) and robot URDF joint limit tables (`openarmx_robot.yaml`).
+- `src/openarmx_ker_dora/` - Exoskeleton hardware transport, pose processing/filtering, safety controller, and ROS 2 bridge nodes.
+- `config/` - Exoskeleton device configuration (`openarmx_ker.yaml`) and robot URDF joint limit tables (`openarmx_robot.yaml`).
 - `tests/` - Unit tests for stream protocol, filtering, joint limits, and controller state machines.
 - `dataflow.yml` - Dora-rs dataflow graph descriptor.
 
@@ -23,8 +23,8 @@ Dora teleoperation system for the OpenArmX KER bimanual leader exoskeleton. Buil
 ## Repository Setup
 
 ```bash
-git clone https://github.com/openarmx/openflex_ker_dora.git
-cd openflex_ker_dora
+git clone https://github.com/openarmx/openarmx_ker_dora.git
+cd openarmx_ker_dora
 uv sync
 source .venv/bin/activate
 ```
@@ -33,7 +33,7 @@ source .venv/bin/activate
 
 Configuration files are located in the `config/` directory:
 
-- `config/openflex_ker.yaml`: Exoskeleton transport mode (`wifi` by default, or `usb`), LAN endpoint (`openarm-ker.local:19090`), low-pass filter coefficient, joint velocity limits, and timeout trip thresholds.
+- `config/openarmx_ker.yaml`: Exoskeleton transport mode (`wifi` by default, or `usb`), LAN endpoint (`openarm-ker.local:19090`), low-pass filter coefficient, joint velocity limits, and timeout trip thresholds.
 - `config/openarmx_robot.yaml`: Joint names and URDF joint soft limits (`lower` / `upper`) for 8 DOF per arm (7 revolute + 1 gripper), used for real-time safety clamping.
 
 ## Running

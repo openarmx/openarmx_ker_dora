@@ -85,7 +85,7 @@ class KerPose:
 
 
 class KerPoseProcessor:
-    """Convert firmware angles into source display values and OpenFlex commands."""
+    """Convert firmware angles into source display values and OpenArmX commands."""
 
     def __init__(self, *, use_hampel: bool = False, use_low_pass: bool = False,
                  low_pass_alpha: float = 0.2, gripper_min: float = 0.0,
@@ -120,7 +120,7 @@ class KerPoseProcessor:
         right_joints = self._transform_arm(angles[0:7], 0)
         left_joints = self._transform_arm(angles[8:15], 7)
 
-        # KER angle 0 is open and its travel endpoint is closed. OpenFlex uses
+        # KER angle 0 is open and its travel endpoint is closed. OpenArmX uses
         # joint 0 as closed and 0.044 as open, so the output range is reversed.
         right_gripper = map_range(angles[7], 0.0, -60.0,
                                   self._gripper_max, self._gripper_min)

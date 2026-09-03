@@ -2,7 +2,7 @@ import unittest
 from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
-from openflex_ker_dora.ker_stream import CMD_PING, KERStream
+from openarmx_ker_dora.ker_stream import CMD_PING, KERStream
 
 
 class TestKerStream(unittest.TestCase):
