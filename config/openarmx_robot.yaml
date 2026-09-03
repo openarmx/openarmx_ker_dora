@@ -1,0 +1,22 @@
+# OpenArmX 双臂机器人关节限位与命名配置 (基于 URDF 模型)
+# 用于遥操作控制器的关节对齐与安全限位截断 (Joint Limits Clamping)
+
+joints:
+  left:
+    - {name: openarmx_left_joint1, lower: -3.344396, upper: 0.905604}
+    - {name: openarmx_left_joint2, lower: -3.2707963268, upper: 0.1292036732}
+    - {name: openarmx_left_joint3, lower: -1.57, upper: 1.57}
+    - {name: openarmx_left_joint4, lower: 0.0, upper: 1.8}
+    - {name: openarmx_left_joint5, lower: -1.5, upper: 1.5}
+    - {name: openarmx_left_joint6, lower: -0.75, upper: 0.75}
+    - {name: openarmx_left_joint7, lower: -1.4, upper: 1.4}
+    - {name: openarmx_left_finger_joint1, lower: 0.0, upper: 0.044}
+  right:
+    - {name: openarmx_right_joint1, lower: -1.25, upper: 3.0}
+    - {name: openarmx_right_joint2, lower: -0.1292036732, upper: 3.2707963268}
+    - {name: openarmx_right_joint3, lower: -1.57, upper: 1.57}
+    - {name: openarmx_right_joint4, lower: 0.0, upper: 1.8}
+    - {name: openarmx_right_joint5, lower: -1.5, upper: 1.5}
+    - {name: openarmx_right_joint6, lower: -0.75, upper: 0.75}
+    - {name: openarmx_right_joint7, lower: -1.4, upper: 1.4}
+    - {name: openarmx_right_finger_joint1, lower: 0.0, upper: 0.044}

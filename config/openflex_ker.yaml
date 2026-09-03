@@ -1,0 +1,46 @@
+# OpenFlex KER 外骨骼遥操配置
+# 运行模式: real
+mode: real
+
+device:
+  # 通信传输方式: wifi (推荐) | usb
+  transport: wifi
+  
+  # WiFi (TCP) 配置
+  wifi_host: openarm-ker.local   # 外骨骼局域网主机名或 IP (例如 192.168.3.100)
+  wifi_port: 19090
+  wifi_connect_timeout_s: 3.0
+  wifi_socket_timeout_s: 0.02
+  publish_rate_hz: 100.0         # 硬件数据采集发布频率 (Hz)
+  reconnect_interval_s: 2.0      # 断线重连重试间隔 (s)
+
+  # USB Direct 直连配置 (当 transport 为 usb 时生效)
+  usb_vid: 12346                 # 0x303A
+  usb_pid: 16386                 # 0x4002
+
+processing:
+  use_hampel_filter: false       # 是否启用 Hampel 离群点滤波
+  use_low_pass_filter: true      # 启用一阶低通滤波
+  low_pass_alpha: 0.2            # 滤波系数 (0 < alpha <= 1, 越小越平滑)
+  gripper_min_position: 0.0      # 夹爪行程最小值 (m)
+  gripper_max_position: 0.044    # 夹爪行程最大值 (m)
+  # 双臂 14 关节缩放系数 (右臂 J1-J7, 左臂 J1-J7)
+  joint_scales: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0,
+                 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, -1.0]
+  # 双臂 14 关节零位偏移量 (rad)
+  joint_offsets: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+safety:
+  drop_command_on_sensor_error: true # 传感器报错时熔断停止输出
+  max_joint_velocity_rad_s: 3.0      # 机械臂最大角速度限制 (rad/s)
+  max_gripper_velocity_m_s: 0.3      # 夹爪最大线速度限制 (m/s)
+  command_rate_hz: 50.0              # 遥操控制循环周期 (50Hz = 20ms)
+  target_timeout_s: 0.25             # 外骨骼数据丢包超时阈值 (s)
+  robot_state_timeout_s: 0.5         # 机械臂状态反馈超时阈值 (s)
+  clamp_to_joint_limits: true        # 强制截断在机械臂 URDF 关节物理限位内
+
+ros2:
+  joint_states_topic: /joint_states
+  left_controller_topic: /left_forward_position_controller/commands
+  right_controller_topic: /right_forward_position_controller/commands

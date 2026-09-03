@@ -1,0 +1,34 @@
+# Python Virtual Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build & Packaging
+build/
+dist/
+*.egg-info/
+
+# Dora Session Artifacts and Logs
+out/
+*.dora-session.yaml
+
+# Local Personal Testing Notes (not for public repo)
+README.local.md
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

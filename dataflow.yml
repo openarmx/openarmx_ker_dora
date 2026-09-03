@@ -1,0 +1,28 @@
+nodes:
+  - id: ker-device
+    path: src/openflex_ker_dora/ker_device_node.py
+    inputs:
+      tick: dora/timer/millis/10
+    outputs:
+      - ker_frame
+      - source_state
+      - device_status
+
+  - id: teleop-controller
+    path: src/openflex_ker_dora/teleop_controller_node.py
+    inputs:
+      tick: dora/timer/millis/20
+      ker_frame: ker-device/ker_frame
+      robot_state: ros2-interface/robot_state
+    outputs:
+      - left_command
+      - right_command
+      - teleop_status
+
+  - id: ros2-interface
+    path: src/openflex_ker_dora/ros2_interface_node.py
+    inputs:
+      left_command: teleop-controller/left_command
+      right_command: teleop-controller/right_command
+    outputs:
+      - robot_state
